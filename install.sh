@@ -1,4 +1,6 @@
 #!/bin/bash
+
+
 # install.sh
 # Waveshare 2.8 Installation with Klipperscreen
 # Author: Kyle Hart (hartk)
