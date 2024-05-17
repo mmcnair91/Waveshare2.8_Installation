@@ -72,7 +72,7 @@ if [[ "$KLIPPERSCREEN_NOW" == "y" || "$KLIPPERSCREEN_NOW" == "Y" ]]; then
   echo "Installing Klipperscreen..."
   cd ~/
   git clone https://github.com/KlipperScreen/KlipperScreen.git
-  sudo bash ./KlipperScreen/scripts/KlipperScreen-install.sh
+  ./KlipperScreen/scripts/KlipperScreen-install.sh
 else
   echo "Klipperscreen installation skipped."
 fi
