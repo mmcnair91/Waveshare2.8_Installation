@@ -2,7 +2,7 @@
 
 
 # install.sh
-# Waveshare 2.8 Installation with Klipperscreen
+# Waveshare 2.8 Installation with Klipperscreen to be used with MainsailOS
 # Author: Kyle Hart (hartk)
 # License: GPL 3.0
 
