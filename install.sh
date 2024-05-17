@@ -57,7 +57,7 @@ else
   echo "Directory already exists."
 fi
 
-sudo wget -P /usr/share/X11/xorg.conf.d/ https://raw.githubusercontent.com/hartk1213/MISC/main/Voron%20Mods/Voron%200/0.2/2_8WaveshareDisplay/Software/90-monitor.conf
+sudo cp ~/Waveshare2.8_Installation/90-monitor.conf /usr/share/X11/xorg.conf.d/
 
 # Step 6: Update /boot/config.txt
 echo "Updating /boot/config.txt..."
@@ -68,23 +68,23 @@ dtoverlay=vc4-kms-v3d\n\
 dtoverlay=vc4-kms-dsi-waveshare-panel,2_8_inch" >> /boot/config.txt'
 
 # Step 7: Ask the user if they want to install klipperscreen now
-read -p "Do you want to install Klipperscreen now? (y/n): " KLIPPERSCREEN_NOW
+read -p "Do you want to install Klipperscreen now? [Y/n]: " KLIPPERSCREEN_NOW
 
-if [[ "$KLIPPERSCREEN_NOW" == "y" || "$KLIPPERSCREEN_NOW" == "Y" ]]; then
+if [[ "$KLIPPERSCREEN_NOW" == "n" || "$KLIPPERSCREEN_NOW" == "N" ]]; then
+  echo "Klipperscreen installation skipped."
+else
   echo "Installing Klipperscreen..."
   cd ~/
   git clone https://github.com/KlipperScreen/KlipperScreen.git
   ./KlipperScreen/scripts/KlipperScreen-install.sh
-else
-  echo "Klipperscreen installation skipped."
 fi
 
 # Step 8: Ask the user if they want to reboot
-read -p "Do you want to reboot now? (y/n): " REBOOT_NOW
+read -p "Do you want to reboot now? [Y/n]: " REBOOT_NOW
 
-if [[ "$REBOOT_NOW" == "y" || "$REBOOT_NOW" == "Y" ]]; then
-  echo "Rebooting the system..."
-  sudo reboot
+if [[ "$REBOOT_NOW" == "n" || "$REBOOT_NOW" == "N" ]]; then
+ echo "Reboot skipped. Please reboot the system manually to apply changes."
 else
-  echo "Reboot skipped. Please reboot the system manually to apply changes."
+  echo "Rebooting the system..."
+  sudo reboot 
 fi
