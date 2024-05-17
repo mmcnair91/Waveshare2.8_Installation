@@ -127,13 +127,19 @@ command
 ```
 sudo nano /boot/config.txt
 ```
-To do this scroll all the way to the bottom of the file and add the following lines and save the file 
+To do this scroll all the way to the bottom of the file and replace
+
+`dtoverlay=WS_xinchDSI_Touch,I2C_bus=10,invertedy,swappedxy`
+
+with
+
+`dtoverlay=WS_xinchDSI_Touch,I2C_bus=10,invertedy,invertedx` 
+
+and add the following lines and save the file 
 
  ```console
 dtoverlay=vc4-kms-v3d
 dtoverlay=vc4-kms-dsi-waveshare-panel,2_8_inch
-dtoverlay=WS_xinchDSI_Screen,SCREEN_type=0,I2C_bus=10
-dtoverlay=WS_xinchDSI_Touch,I2C_bus=10,invertedy,invertedx
 ```
 
 ## Step 7
