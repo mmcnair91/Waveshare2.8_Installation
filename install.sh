@@ -61,11 +61,11 @@ sudo wget -P /usr/share/X11/xorg.conf.d/ https://raw.githubusercontent.com/hartk
 
 # Step 6: Update /boot/config.txt
 echo "Updating /boot/config.txt..."
+sudo sed -i '/dtoverlay=WS_xinchDSI_Screen,SCREEN_type=0,I2C_bus=10/c\dtoverlay=WS_xinchDSI_Screen,SCREEN_type=0,I2C_bus=10' /boot/config.txt
+sudo sed -i '/dtoverlay=WS_xinchDSI_Touch,I2C_bus=10,invertedy,swappedxy/c\dtoverlay=WS_xinchDSI_Touch,I2C_bus=10,invertedy,invertedx' /boot/config.txt
 sudo sh -c 'echo "\
 dtoverlay=vc4-kms-v3d\n\
-dtoverlay=vc4-kms-dsi-waveshare-panel,2_8_inch\n\
-dtoverlay=WS_xinchDSI_Screen,SCREEN_type=0,I2C_bus=10\n\
-dtoverlay=WS_xinchDSI_Touch,I2C_bus=10,invertedy,invertedx" >> /boot/config.txt'
+dtoverlay=vc4-kms-dsi-waveshare-panel,2_8_inch" >> /boot/config.txt'
 
 # Step 7: Ask the user if they want to install klipperscreen now
 read -p "Do you want to install Klipperscreen now? (y/n): " KLIPPERSCREEN_NOW
