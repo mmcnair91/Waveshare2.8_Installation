@@ -19,6 +19,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+#Removing previous installation attempts of Waveshare Installs
+rm -r  /Waveshare-DSI-LCD/
+
 # Step 1: Clone Waveshare-DSI-LCD driver repo
 echo "Cloning Waveshare-DSI-LCD driver repository..."
 cd ~
